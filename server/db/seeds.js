@@ -7,7 +7,7 @@ db.userFootprints.insertMany(
  diet: "Meat-eater",
  commute: "Car",
  recycling: "Sometimes",
- footprint: 4
+ footprint: 8
 }
 ]
 );
