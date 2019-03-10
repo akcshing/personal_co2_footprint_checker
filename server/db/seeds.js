@@ -12,11 +12,11 @@ db.userFootprints.insertMany(
 ]
 );
 
-db.countriesFootprints.insertMany(
+db.countryFootprints.insertMany(
   [
-  {
-  country: "UK",
-  footprint: 3
-  }
+    {
+      country: "UK",
+      footprint: 3
+    }
   ]
 );
