@@ -4,30 +4,18 @@ db.dropDatabase;
 db.userFootprints.insertMany(
 [
 {
-<<<<<<< HEAD
-  diet: "Meat-eater",
-  commute: "Car",
-  recycling: "Sometimes",
-  footprint: 4
-=======
+
  diet: "Meat-eater",
  commute: "Car",
  recycling: "Sometimes",
  footprint: 8
->>>>>>> develop
+
 }
 ]
 );
 
 db.countryFootprints.insertMany(
-<<<<<<< HEAD
-  [
-    {
-      country: "UK",
-      footprint: 3
-    }
-  ]
-=======
+
  [
    {
      country: "Qatar",
