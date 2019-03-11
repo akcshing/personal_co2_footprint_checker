@@ -24,9 +24,9 @@ FpCalculator.prototype.addScores = function (scores) {
 FpCalculator.prototype.postFootprintData = function (footprintData) {
   this.request.post(footprintData)
     .then((allFootprints) => {
-      console.log(allFootprints);
+      // console.log(allFootprints);
       const latestFootprint = allFootprints[allFootprints.length - 1];
-      console.log(latestFootprint);
+      // console.log(latestFootprint);
       PubSub.publish("FpCalculator:all-data-loaded", allFootprints);
       PubSub.publish("FpCalculator:latest-footprint", latestFootprint);
     })

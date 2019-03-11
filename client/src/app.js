@@ -1,5 +1,6 @@
 const FormView = require("./views/form_view");
 const FpCalculator = require("./models/fp_calculator");
+const FootprintResultView = require("./views/footprint_result_view");
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -13,6 +14,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const fpCalculator = new FpCalculator(url);
   fpCalculator.bindEvents();
 
+  const fpResultContainer = document.querySelector("#footprint-result-view");
+  const footprintResultView = new FootprintResultView(fpResultContainer);
+  footprintResultView.bindEvents();
 
 
 })
