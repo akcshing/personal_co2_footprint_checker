@@ -5,12 +5,14 @@ db.userFootprints.insertMany(
 
   [
     {
+      date: "2019-02-28",
       diet: "Meat-eater",
       commute: "Car",
       recycling: "Sometimes",
       footprint: 8
     },
     {
+      date: "2019-01-01",
       diet: "Vegetarian",
       commute: "Car",
       recycling: "Sometimes",

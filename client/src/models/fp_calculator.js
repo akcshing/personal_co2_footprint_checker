@@ -13,8 +13,20 @@ FpCalculator.prototype.bindEvents = function () {
     // console.log(evt.detail);
     this.postFootprintData(evt.detail);
   })
+
+  PubSub.subscribe("ShowSelectView:id-selected", (evt)=>{
+    const id = evt.detail;
+    this.get
+  })
 };
 
+FpCalculator.prototype.getData = function () {
+  this.request.get()
+    .then((allFootprints) => {
+      // console.log(allFootprints);
+      PubSub.publish("FpCalculator:index-loaded", allFootprints);
+    })
+};
 
 FpCalculator.prototype.addScores = function (scores) {
   const footprint = parseInt(scores.diet) + parseInt(scores.commute) + parseInt(scores.recycling)
