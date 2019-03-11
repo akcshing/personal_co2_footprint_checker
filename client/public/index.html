@@ -1,65 +1,70 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <script src="js/bundle.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet">
-    <link rel="stylesheet" href="./css/main.css">
-    <title>CO2 Footprint Checker</title>
-  </head>
-  <body>
-    <h1>CO2 Footprint Checker</h1>
+<head>
+  <meta charset="utf-8">
+  <script src="js/bundle.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet">
+  <link rel="stylesheet" href="./css/main.css">
+  <title>CO2 Footprint Checker</title>
+</head>
+<body>
+  <h1>CO2 Footprint Checker</h1>
 
-    <div id="intro">
+  <div id="intro">
     Calculate Your Carbon Footprint Below:
-    </div>
-    <div class="grid">
+  </div>
+
+  <div>
+    <label for="all-footprints">Select previous footprint: </label>
+    <select id="all-footprints" name="all-footprints"></select>
+  </div>
+  <div class="grid">
+
     <div id="form-view">
       <h2>Select Your Behaviours</h2>
       <form id="form" action="index.html" method="post">
+
         <ul>
 
           <li>
+            <input type="date" id="date">
+          </li>
+          <li>
 
-        <input type="date" id="date">
+            <label for="diet">Diet: </label>
+            <select id="diet" name="">
+              <option selected value="">Select One</option>
+              <option value=3>Meat-eater</option>
+              <option value=2>Vegetarian</option>
+              <option value=1>Vegan</option>
+            </select>
 
-        <label for="diet">Diet: </label>
-        <select id="diet" name="">
-          <option selected value="">Select One</option>
-          <option value=3>Meat-eater</option>
-          <option value=2>Vegetarian</option>
-          <option value=1>Vegan</option>
-        </select>
-
-        </li>
-        <li>
-        <label for="commute">Commute: </label>
-        <select id="commute" name="">
-          <option selected value="">Select One</option>
-          <option value=3>Car</option>
-          <option value=2>Bus</option>
-          <option value=1>Bike/Walk</option>
-        </select>
-        </li>
-        <li>
-        <label for="recycling">Recycling: </label>
-        <select id="recycling" name="">
-          <option selected value="">Select One</option>
-          <option value= 3 >Never</option>
-          <option value=2>Sometimes</option>
-          <option value=1>Always</option>
-        </select>
-        </li>
-          </ul>
+          </li>
+          <li>
+            <label for="commute">Commute: </label>
+            <select id="commute" name="">
+              <option selected value="">Select One</option>
+              <option value=3>Car</option>
+              <option value=2>Bus</option>
+              <option value=1>Bike/Walk</option>
+            </select>
+          </li>
+          <li>
+            <label for="recycling">Recycling: </label>
+            <select id="recycling" name="">
+              <option selected value="">Select One</option>
+              <option value= 3 >Never</option>
+              <option value=2>Sometimes</option>
+              <option value=1>Always</option>
+            </select>
+          </li>
+        </ul>
         <input type="submit" id="save" value="Calculate">
 
       </form>
     </div>
 
-    <div>
-      <label for="all-footprints">Select previous footprint: </label>
-      <select id="all-footprints" name="all-footprints"></select>
-    </div>
+
 
     <h2>Individual Results</h2>
     <div id="result-list-view">
@@ -73,15 +78,16 @@
 
     <h2>COOL DATA GRAPH!</h2>
     <div id="cool-data-view">
-
-      <div id="explanation">
-        <!-- <p>A carbon footprint is defined as the total amount of greenhouse gases produced to directly and indirectly support a person's activities. It is important to remember that any estimation of a carbon footprint will have some level of inprecision- it is impossible to completely accurately estimate any one person's impact on the environment. </p>
-        <p>This application quantifies your carbon footprint using values that you submit for different aspects of your lifestyle. It also compares your carbon footprint with that of average citizens from different countries- these estimations are made based on the most recent (2014) figures for country per capita footprints, published by the World Bank. For more information about how to reduce your carbon footprint, see the following links:
-        </p> -->
-      </div>
-
     </div>
 
+    <div id="explanation">
+      <p>A carbon footprint is defined as the total amount of greenhouse gases produced to directly and indirectly support a person's activities. It is important to remember that any estimation of a carbon footprint will have some level of inprecision- it is impossible to completely accurately estimate any one person's impact on the environment. </p>
+      <p>This application quantifies your carbon footprint using values that you submit for different aspects of your lifestyle. It also compares your carbon footprint with that of average citizens from different countries- these estimations are made based on the most recent (2014) figures for country per capita footprints, published by the World Bank. For more information about how to reduce your carbon footprint, see the following links:
+      </p>
+    </div>
 
-  </body>
+  </div>
+
+
+</body>
 </html>

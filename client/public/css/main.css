@@ -6,7 +6,7 @@ body {
   background-image: url("glencoe_picture_project_background.jpg");
   background-size: cover;
   background-position: center;
-
+/*
 }
 
 .grid {
@@ -15,7 +15,7 @@ body {
     margin: 2rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
 
 }
 
@@ -56,4 +56,4 @@ ul {
 h3 {
   text-align: center;
 
-}
+} */
