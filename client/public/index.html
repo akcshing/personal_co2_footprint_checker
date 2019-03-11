@@ -15,8 +15,11 @@
     </div>
     <div class="grid">
     <div id="form-view">
-
+      <h2>Select Your Behaviours</h2>
       <form id="form" action="index.html" method="post">
+        <ul>
+
+          <li>
 
         <label for="diet">Diet: </label>
         <select id="diet" name="">
@@ -26,6 +29,8 @@
           <option value=1>Vegan</option>
         </select>
 
+        </li>
+        <li>
         <label for="commute">Commute: </label>
         <select id="commute" name="">
           <option selected value="">Select One</option>
@@ -33,7 +38,8 @@
           <option value=2>Bus</option>
           <option value=1>Bike/Walk</option>
         </select>
-
+        </li>
+        <li>
         <label for="recycling">Recycling: </label>
         <select id="recycling" name="">
           <option selected value="">Select One</option>
@@ -41,7 +47,8 @@
           <option value=2>Sometimes</option>
           <option value=1>Always</option>
         </select>
-
+        </li>
+          </ul>
         <input type="submit" id="save" value="Calculate">
 
       </form>
