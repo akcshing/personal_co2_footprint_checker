@@ -13,7 +13,7 @@ FormView.prototype.bindEvents = function () {
 FormView.prototype.handleSubmit = function (evt) {
   evt.preventDefault();
   const newUserFootprint = this.createFootprint(evt.target);
-  console.log(newUserFootprint);
+  // console.log(newUserFootprint);
   PubSub.publish("FormView:form-submitted", newUserFootprint);
   evt.target.reset();
 };

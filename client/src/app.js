@@ -1,4 +1,5 @@
 const FormView = require("./views/form_view");
+const FpCalculator = require("./models/fp_calculator");
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -7,6 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector("#form");
   const formView = new FormView(form);
   formView.bindEvents();
+
+  const fpCalculator = new FpCalculator();
+  fpCalculator.bindEvents();
 
 
 })
