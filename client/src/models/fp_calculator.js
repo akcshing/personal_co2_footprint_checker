@@ -16,7 +16,7 @@ FpCalculator.prototype.bindEvents = function () {
 
   PubSub.subscribe("ShowSelectView:id-selected", (evt)=>{
     const id = evt.detail;
-    this.get
+
   })
 };
 
