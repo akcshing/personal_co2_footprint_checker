@@ -1,17 +1,25 @@
 use co2footprint;
-db.dropDatabase;
+db.dropDatabase();
 
 db.userFootprints.insertMany(
-<<<<<<< HEAD
+
   [
     {
       diet: "Meat-eater",
       commute: "Car",
       recycling: "Sometimes",
       footprint: 8
+    },
+    {
+      diet: "Vegetarian",
+      commute: "Car",
+      recycling: "Sometimes",
+      footprint: 7
     }
   ]
 );
+
+
 
 db.countryFootprints.insertMany(
   [
@@ -19,27 +27,6 @@ db.countryFootprints.insertMany(
       country: "Qatar",
       footprintPerCapita: 9
     },
-=======
-[
-{
-
- diet: "Meat-eater",
- commute: "Car",
- recycling: "Sometimes",
- footprint: 8
-
-}
-]
-);
-
-db.countryFootprints.insertMany(
-
- [
-   {
-     country: "Qatar",
-     footprintPerCapita: 9
-   },
->>>>>>> feature/backend
 
     {
       country: "United Kingdom",
@@ -79,6 +66,6 @@ db.countryFootprints.insertMany(
     {
       country: "Ethiopia",
       footprintPerCapita: 3
-    },
+    }
   ]
 );

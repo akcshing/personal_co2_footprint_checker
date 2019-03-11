@@ -1,23 +1,31 @@
-// const RequestHelper =
+const RequestHelper = require("../helpers/request_helpers");
 const PubSub = require("../helpers/pub_sub");
 
 const FpCalculator = function (url) {
   this.url = url;
-  // this.request = new RequestHelper(this.url);
+  this.request = new RequestHelper(this.url);
 }
 
 FpCalculator.prototype.bindEvents = function () {
   PubSub.subscribe("FormView:form-submitted", (evt) => {
     // console.log(evt.detail);
-    this.addScores(evt.detail);
+    evt.detail.footprint = this.addScores(evt.detail);
+    // console.log(evt.detail);
+    this.postFootprintData(evt.detail);
   })
 };
 
 
 FpCalculator.prototype.addScores = function (scores) {
   const footprint = parseInt(scores.diet) + parseInt(scores.commute) + parseInt(scores.recycling)
-  console.log(footprint);
+  return footprint;
 };
+
+FpCalculator.prototype.postFootprintData = function (footprintData) {
+  this.request.post(footprintData)
+  // then
+};
+
 
 
 module.exports = FpCalculator;

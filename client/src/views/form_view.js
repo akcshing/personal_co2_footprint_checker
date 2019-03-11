@@ -22,7 +22,8 @@ FormView.prototype.createFootprint = function (formData) {
   const newUserFootprintObj = {
     diet: formData.diet.value,
     commute: formData.commute.value,
-    recycling: formData.recycling.value
+    recycling: formData.recycling.value,
+    footprint: 0
   }
   return newUserFootprintObj;
 };

@@ -9,8 +9,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const formView = new FormView(form);
   formView.bindEvents();
 
-  const fpCalculator = new FpCalculator();
+  const url = "http://localhost:3000/api/userfootprint"
+  const fpCalculator = new FpCalculator(url);
   fpCalculator.bindEvents();
+
 
 
 })
