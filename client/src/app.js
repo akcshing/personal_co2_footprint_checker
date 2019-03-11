@@ -2,6 +2,7 @@ const FormView = require("./views/form_view");
 const FpCalculator = require("./models/fp_calculator");
 const FootprintResultView = require("./views/footprint_result_view");
 const ResultListView = require("./views/result_list_view");
+const CoolDataView = require("./views/cool_data_view");
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -22,5 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const resultListViewContainer = document.querySelector("#result-list-view");
   const resultListView = new ResultListView(resultListViewContainer);
   resultListView.bindEvents();
+
+  const coolDataContainer = document.querySelector("#cool-data-view");
+  const coolDataView = new CoolDataView(coolDataContainer);
+  coolDataView.bindEvents();
 
 })
