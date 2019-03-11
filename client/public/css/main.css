@@ -32,13 +32,28 @@ h2 {
 
 }
 
+#diet {
+
+
+}
+
 #intro {
   text-align: center;
-  font-size: 22px;
+  font-size: 40px;
   padding: 15px;
 }
 
 #form-view {
+  text-align: center;
+
+}
+
+ul {
+  list-style: none;
+
+}
+
+h3 {
   text-align: center;
 
 }
