@@ -12,6 +12,9 @@ ResultListView.prototype.bindEvents = function () {
 };
 
 ResultListView.prototype.renderScores = function (footprint) {
+
+  this.container.innerHTML = '';
+
   const scoreList = document.createElement("ul");
   this.container.appendChild(scoreList);
 
