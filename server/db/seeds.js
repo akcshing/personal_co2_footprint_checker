@@ -2,6 +2,7 @@ use co2footprint;
 db.dropDatabase;
 
 db.userFootprints.insertMany(
+<<<<<<< HEAD
   [
     {
       diet: "Meat-eater",
@@ -18,6 +19,27 @@ db.countryFootprints.insertMany(
       country: "Qatar",
       footprintPerCapita: 9
     },
+=======
+[
+{
+
+ diet: "Meat-eater",
+ commute: "Car",
+ recycling: "Sometimes",
+ footprint: 8
+
+}
+]
+);
+
+db.countryFootprints.insertMany(
+
+ [
+   {
+     country: "Qatar",
+     footprintPerCapita: 9
+   },
+>>>>>>> feature/backend
 
     {
       country: "United Kingdom",

@@ -7,9 +7,55 @@
   </head>
   <body>
     <h1>CO2 Footprint Checker</h1>
-    <form class="" action="index.html" method="post">
+    <div id="intro">
+      <p>intro paragraph</p>
+    </div>
 
-    </form>
+    <div id="form-view">
+
+      <form id="form" action="index.html" method="post">
+
+        <label for="diet">Diet: </label>
+        <select id="diet" name="">
+          <option selected value="">select one</option>
+          <option value="3">Meat-eater</option>
+          <option value="2">Vegetarian</option>
+          <option value="1">Vegan</option>
+        </select>
+
+        <label for="commute">Commute: </label>
+        <select id="commute" name="">
+          <option selected value="">select one</option>
+          <option value="3">Car</option>
+          <option value="2">Bus</option>
+          <option value="1">Bike/Walk</option>
+        </select>
+
+        <label for="recycling">Recycling: </label>
+        <select id="recycling" name="">
+          <option selected value="">select one</option>
+          <option value="3">Never</option>
+          <option value="2">Sometimes</option>
+          <option value="1">Always</option>
+        </select>
+
+        <input type="submit" id="save" value="save">
+
+      </form>
+    </div>
+
+
+    <div id="result-list-view">
+      <h2>Individual Results</h2>
+    </div>
+
+    <div id="footprint-result-view">
+      <h2>Your Footprint Result</h2>
+    </div>
+
+    <div id="cool-data-view">
+      <h2>COOL DATA GRAPH!</h2>
+    </div>
 
   </body>
 </html>
