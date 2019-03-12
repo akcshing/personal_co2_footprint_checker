@@ -34,8 +34,7 @@ FpCalculator.prototype.getData = function () {
 };
 
 FpCalculator.prototype.addScores = function (footprintData) {
-  const footprint = footprintData.scores.reduce((accumulator, currentValue) => accumulator + parseInt(currentValue), 0)
-  return footprint;
+  return footprintData.scores.reduce((accumulator, currentValue) => accumulator + parseInt(Object.values(currentValue)), 0)
 };
 
 FpCalculator.prototype.postFootprintData = function (footprintData) {
