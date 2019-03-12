@@ -21,7 +21,7 @@ FormView.prototype.handleSubmit = function (evt) {
 FormView.prototype.createFootprint = function (formData) {
   const newUserFootprintObj =
   {
-    date: formData.date.value,
+    date: formData.dateSelect.value,
     scores: [
       {diet: formData.diet.value},
       {commute: formData.commute.value},
