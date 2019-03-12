@@ -11,6 +11,11 @@ ShowSelectView.prototype.bindEvents = function () {
     // console.log(allFootprints);
     this.populate(allFootprints);
   })
+  PubSub.subscribe("FpCalculator:all-data-loaded", (evt) => {
+    const allFootprints = evt.detail;
+    // console.log(allFootprints);
+    this.populate(allFootprints);
+  })
 
   this.container.addEventListener('change', (evt) => {
     const id = evt.target.value;
@@ -22,6 +27,7 @@ ShowSelectView.prototype.bindEvents = function () {
 };
 
 ShowSelectView.prototype.populate = function (allFootprints) {
+  this.container.innerHTML = "";
   allFootprints.forEach( (footprint) => {
     const option = document.createElement("option");
     option.value = footprint._id
