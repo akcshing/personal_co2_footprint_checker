@@ -14,6 +14,14 @@ FpCalculator.prototype.bindEvents = function () {
     this.postFootprintData(evt.detail);
   })
 
+  PubSub.subscribe("ShowSelectedView:update-form-submitted", (evt) => {
+    // console.log(evt.detail);
+    evt.detail.footprint = this.addScores(evt.detail);
+    // console.log(evt.detail);
+    // this.updateFootprintData(evt.detail);
+  })
+
+
   PubSub.subscribe("ShowSelectView:id-selected", (evt)=>{
     const id = evt.detail;
     // console.log(id);

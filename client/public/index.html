@@ -65,6 +65,49 @@
       </form>
     </div>
 
+    <div>
+      <h2>Selected Footprint's Options</h2>
+      <form id="update-form" method="put">
+
+        <ul>
+
+          <li>
+            <input required type="date" id="newDateSelect">
+          </li>
+          <li>
+
+            <label for="diet">Diet: </label>
+            <select required id="newDiet" name="">
+              <option selected disabled value="">Select One</option>
+              <option value=3>Meat-eater</option>
+              <option value=2>Vegetarian</option>
+              <option value=1>Vegan</option>
+            </select>
+
+          </li>
+          <li>
+            <label for="commute">Commute: </label>
+            <select required id="newCommute" name="">
+              <option selected disabled value="">Select One</option>
+              <option value=3>Car</option>
+              <option value=2>Bus</option>
+              <option value=1>Bike/Walk</option>
+            </select>
+          </li>
+          <li>
+            <label for="recycling">Recycling: </label>
+            <select required id="newRecycling" name="">
+              <option selected disabled value="">Select One</option>
+              <option value= 3 >Never</option>
+              <option value=2>Sometimes</option>
+              <option value=1>Always</option>
+            </select>
+          </li>
+        </ul>
+        <input type="submit" id="update" value="Update">
+      </form>
+    </div>
+
 
 
     <h2>Individual Results</h2>

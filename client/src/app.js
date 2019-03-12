@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const coolDataView = new CoolDataView(coolDataContainer);
   coolDataView.bindEvents();
 
-  const formContainer = document.querySelector("#form");
+  const formContainer = document.querySelector("#update-form");
   const showSelectedView = new ShowSelectedView(formContainer);
   showSelectedView.bindEvents();
 

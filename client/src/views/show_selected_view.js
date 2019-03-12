@@ -4,7 +4,7 @@ const CoolDataView = require("./cool_data_view")
 
 
 const ShowSelectedView = function (form) {
-  this.container = form;
+  this.form = form;
 }
 
 ShowSelectedView.prototype.bindEvents = function () {
@@ -16,43 +16,50 @@ ShowSelectedView.prototype.bindEvents = function () {
     dateHeader.textContent = `Your selected entry: ${footprint.date}.`
 
 
-    const behavioursHeader = document.querySelector("#behaviours-header");
-    behavioursHeader.textContent = "Selected Footprint's Options"
-
-    const dateSelect = document.querySelector("#dateSelect");
+    const dateSelect = document.querySelector("#newDateSelect");
     // console.dir(dateSelect);
     dateSelect.value = footprint.date;
 
-    const dietSelect = document.querySelector("#diet");
+    const dietSelect = document.querySelector("#newDiet");
     dietSelect[parseInt(Object.values(footprint.scores[0]))].selected = true;
 
-    const commuteSelect = document.querySelector("#commute");
+    const commuteSelect = document.querySelector("#newCommute");
     commuteSelect[parseInt(Object.values(footprint.scores[1]))].selected = true;
 
-    const recyclingSelect = document.querySelector("#recycling");
+    const recyclingSelect = document.querySelector("#newRecycling");
     recyclingSelect[parseInt(Object.values(footprint.scores[2]))].selected = true;
+  });
 
-    const updateButton = document.createElement("input");
-    updateButton.value = "Update";
-    updateButton.type = "submit";
-    updateButton.id = "update";
-    this.container.appendChild(updateButton);
-
-    const saveButton = document.querySelector("#save");
-    // saveButton.classList.add("hide");
-    saveButton.style.visibility = "hidden"
-
-
+  this.form.addEventListener("submit", (evt) => {
+    this.handleUpdateSubmit(evt);
   })
+}
+
+ShowSelectedView.prototype.handleUpdateSubmit = function (evt) {
+  evt.preventDefault();
+  const updatedUserFootprint = this.createUpdatedFootprint(evt.target);
+  console.log(updatedUserFootprint);
+  PubSub.publish("ShowSelectedView:update-form-submitted", updatedUserFootprint);
+  evt.target.reset();
 };
 
-// update button with eventlistener that sends update request
-// re renders results
-//
-//create update function in requesthelper
-//
-// hide calculate button
-//
+ShowSelectedView.prototype.createUpdatedFootprint = function (updateFormData) {
+  const updatedUserFootprint =
+  {
+    date: updateFormData.newDateSelect.value,
+    scores: [
+      {diet: updateFormData.newDiet.value},
+      {commute: updateFormData.newCommute.value},
+      {recycling: updateFormData.newRecycling.value}
+    ],
+    footprint: 0
+  }
+  return updatedUserFootprint;
+};
+
+
+
+
 // delete button?
 
 module.exports = ShowSelectedView;
