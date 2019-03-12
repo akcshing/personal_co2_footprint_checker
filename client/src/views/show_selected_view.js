@@ -38,13 +38,14 @@ ShowSelectedView.prototype.bindEvents = function () {
     updateButton.id = "update";
     this.container.appendChild(updateButton);
 
-
+    const saveButton = document.querySelector("#save");
+    // saveButton.classList.add("hide");
+    saveButton.style.visibility = "hidden"
 
 
   })
 };
 
-// show update button
 // update button with eventlistener that sends update request
 // re renders results
 //
