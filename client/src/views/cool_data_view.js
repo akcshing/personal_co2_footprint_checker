@@ -16,6 +16,16 @@ CoolDataView.prototype.bindEvents = function () {
 
 
 CoolDataView.prototype.renderChart = function (footprint) {
+
+  const seriesArr =[]
+  footprint.scores.forEach((score) => {
+    seriesObj = {
+      name: Object.keys(score),
+      data: [parseInt(Object.values(score))]
+    }
+    seriesArr.push(seriesObj)
+  });
+
   Highcharts.chart(this.container, {
     chart: {
         type: 'column'
@@ -63,17 +73,10 @@ CoolDataView.prototype.renderChart = function (footprint) {
             }
         }
     },
-    series: [{
-        name: "Diet",
-        data: [parseInt(footprint.diet)]
-    }, {
-        name: 'Commute',
-        data: [parseInt(footprint.commute)]
-    }, {
-        name: 'Recycling',
-        data: [parseInt(footprint.recycling)]
-    }]
+    series: seriesArr
+
 });
 };
+
 
 module.exports = CoolDataView;
