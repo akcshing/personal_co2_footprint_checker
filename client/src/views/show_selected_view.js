@@ -10,7 +10,7 @@ const ShowSelectedView = function (form) {
 ShowSelectedView.prototype.bindEvents = function () {
   PubSub.subscribe("FpCalculator:footprint-retrieved", (evt) => {
     const footprint = evt.detail;
-
+    console.log("selected view:", footprint);
     const dateHeader = document.querySelector("#date-header");
     dateHeader.innerHTML = "";
     dateHeader.textContent = `Your selected entry: ${footprint.date}.`
@@ -28,22 +28,33 @@ ShowSelectedView.prototype.bindEvents = function () {
 
     const recyclingSelect = document.querySelector("#newRecycling");
     recyclingSelect[parseInt(Object.values(footprint.scores[2]))].selected = true;
+
+    const fpIdInput = document.querySelector("#fpId")
+    fpIdInput.value = footprint._id
+    console.log("id:", footprint._id);
   });
 
   this.form.addEventListener("submit", (evt) => {
-    this.handleUpdateSubmit(evt);
+    evt.preventDefault();
+    const id = evt.target.fpId.value;
+    console.log("hi", id);
+    this.handleUpdateSubmit(id, evt.target);
   })
 }
 
-ShowSelectedView.prototype.handleUpdateSubmit = function (evt) {
-  evt.preventDefault();
-  const updatedUserFootprint = this.createUpdatedFootprint(evt.target);
-  console.log(updatedUserFootprint);
-  PubSub.publish("ShowSelectedView:update-form-submitted", updatedUserFootprint);
-  evt.target.reset();
+ShowSelectedView.prototype.handleUpdateSubmit = function (id, evt) {
+  // evt.preventDefault();
+  const updatedUserFootprint = this.createUpdatedFootprint(evt);
+
+  const updatedItem = {id: id, updatedData: updatedUserFootprint}
+  // console.log("hello", evt);
+  // console.log(updatedUserFootprint);
+  PubSub.publish("ShowSelectedView:update-form-submitted", updatedItem);
+
 };
 
 ShowSelectedView.prototype.createUpdatedFootprint = function (updateFormData) {
+  console.log("update form data: ", updateFormData);
   const updatedUserFootprint =
   {
     date: updateFormData.newDateSelect.value,

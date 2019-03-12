@@ -16,9 +16,11 @@ FpCalculator.prototype.bindEvents = function () {
 
   PubSub.subscribe("ShowSelectedView:update-form-submitted", (evt) => {
     // console.log(evt.detail);
-    evt.detail.footprint = this.addScores(evt.detail);
-    // console.log(evt.detail);
-    // this.updateFootprintData(evt.detail);
+    evt.detail.updatedData.footprint = this.addScores(evt.detail.updatedData);
+    const id = evt.detail.id
+    console.log("I AM AN ID:", id);
+    this.updateFootprintData(id, evt.detail.updatedData);
+
   })
 
 
@@ -56,6 +58,12 @@ FpCalculator.prototype.postFootprintData = function (footprintData) {
     })
 };
 
+FpCalculator.prototype.updateFootprintData = function (id, updatedFootprintData) {
+  // const id = {_id: ObjectID(id)}
+  console.log("HERE IS ID", id);
+  this.request.put(id, updatedFootprintData)
+
+};
 
 
 module.exports = FpCalculator;
