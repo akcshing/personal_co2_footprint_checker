@@ -16,6 +16,8 @@ ShowSelectView.prototype.bindEvents = function () {
     const id = evt.target.value;
     // console.log(id);
     PubSub.publish("ShowSelectView:id-selected", id)
+
+    // CHECK PUBLISH CHANNEL!
   })
 };
 
