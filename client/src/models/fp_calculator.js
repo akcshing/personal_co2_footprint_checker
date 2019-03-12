@@ -38,7 +38,7 @@ FpCalculator.prototype.bindEvents = function () {
 FpCalculator.prototype.getData = function () {
   this.request.get()
     .then((allFootprints) => {
-      // console.log(allFootprints);
+      console.log(allFootprints);
       PubSub.publish("FpCalculator:index-loaded", allFootprints);
     })
 };

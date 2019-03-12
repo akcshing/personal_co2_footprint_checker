@@ -25,7 +25,14 @@ FormView.prototype.createFootprint = function (formData) {
     scores: [
       {diet: formData.diet.value},
       {commute: formData.commute.value},
-      {recycling: formData.recycling.value}
+      {recycling: formData.recycling.value},
+      {heating: formData.heating.value},
+      {flying: formData.flying.value},
+      {clothes: formData.clothes.value},
+      {electronics: formData.electronics.value},
+      {pets: formData.pets.value},
+      {beauty: formData.beauty.value},
+      {paper: formData.paper.value},
     ],
     footprint: 0
   }

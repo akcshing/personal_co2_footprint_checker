@@ -38,16 +38,34 @@ ShowSelectedView.prototype.bindEvents = function () {
     const fpIdInput = document.querySelector("#fpId")
     fpIdInput.value = footprint._id
     console.log("id:", footprint._id);
-  });
 
-  this.form.addEventListener("submit", (evt) => {
-    evt.preventDefault();
-    const id = evt.target.fpId.value;
-    console.log("hi", id);
-    this.handleUpdateSubmit(id, evt.target);
+    const heatingSelect = document.querySelector("#heating");
+    heatingSelect[parseInt(Object.values(footprint.scores[3]))].selected = true;
+
+    const flyingSelect = document.querySelector("#flying");
+    flyingSelect[parseInt(Object.values(footprint.scores[4]))].selected = true;
+
+    const clothesFootwearSelect = document.querySelector("#clothes-footwear");
+    clothesFootwearSelect[parseInt(Object.values(footprint.scores[5]))].selected = true;
+
+    const electronicsAppliancesSelect = document.querySelector("#electronics-appliances");
+    electronicsAppliancesSelect[parseInt(Object.values(footprint.scores[6]))].selected = true;
+
+    const petsSelect = document.querySelector("#pets");
+    petsSelect[parseInt(Object.values(footprint.scores[7]))].selected = true;
+
+    const beautyGroomingProductsSelect = document.querySelector("#beauty");
+    beautyGroomingProductsSelect[parseInt(Object.values(footprint.scores[8]))].selected = true;
+
+    const paperBasedProductsSelect = document.querySelector("#paper");
+    paperBasedProductsSelect[parseInt(Object.values(footprint.scores[9]))].selected = true;
+    this.form.addEventListener("submit", (evt) => {
+      evt.preventDefault();
+      const id = evt.target.fpId.value;
+      console.log("hi", id);
+      this.handleUpdateSubmit(id, evt.target);
+    })
   })
-
-
 }
 
 ShowSelectedView.prototype.handleUpdateSubmit = function (id, evt) {
