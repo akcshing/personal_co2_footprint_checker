@@ -9,12 +9,18 @@ const ShowSelectedView = function (form) {
 
 ShowSelectedView.prototype.bindEvents = function () {
   PubSub.subscribe("FpCalculator:footprint-retrieved", (evt) => {
+
+    const hidingPostForm = document.querySelector("#form-view");
+    hidingPostForm.classList.add("hidden");
+
+    const showingUpdateForm = document.querySelector("#updateFormView");
+    showingUpdateForm.classList.remove("hidden");
+
     const footprint = evt.detail;
     console.log("selected view:", footprint);
     const dateHeader = document.querySelector("#date-header");
     dateHeader.innerHTML = "";
     dateHeader.textContent = `Your selected entry: ${footprint.date}.`
-
 
     const dateSelect = document.querySelector("#newDateSelect");
     // console.dir(dateSelect);
@@ -40,6 +46,8 @@ ShowSelectedView.prototype.bindEvents = function () {
     console.log("hi", id);
     this.handleUpdateSubmit(id, evt.target);
   })
+
+
 }
 
 ShowSelectedView.prototype.handleUpdateSubmit = function (id, evt) {
