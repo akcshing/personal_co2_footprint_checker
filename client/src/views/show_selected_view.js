@@ -3,8 +3,8 @@ const ResultListView = require("./result_list_view")
 const CoolDataView = require("./cool_data_view")
 
 
-const ShowSelectedView = function (dateContainer) {
-  this.container = dateContainer
+const ShowSelectedView = function (form) {
+  this.container = form;
 }
 
 ShowSelectedView.prototype.bindEvents = function () {
@@ -32,14 +32,18 @@ ShowSelectedView.prototype.bindEvents = function () {
     const recyclingSelect = document.querySelector("#recycling");
     recyclingSelect[parseInt(Object.values(footprint.scores[2]))].selected = true;
 
+    const updateButton = document.createElement("input");
+    updateButton.value = "Update";
+    updateButton.type = "submit";
+    updateButton.id = "update";
+    this.container.appendChild(updateButton);
+
 
 
 
   })
 };
-// form populated using selected fp data
-//
-//
+
 // show update button
 // update button with eventlistener that sends update request
 // re renders results
