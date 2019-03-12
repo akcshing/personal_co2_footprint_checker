@@ -33,8 +33,8 @@ FpCalculator.prototype.getData = function () {
     })
 };
 
-FpCalculator.prototype.addScores = function (scores) {
-  const footprint = parseInt(scores.diet) + parseInt(scores.commute) + parseInt(scores.recycling)
+FpCalculator.prototype.addScores = function (footprintData) {
+  const footprint = footprintData.scores.reduce((accumulator, currentValue) => accumulator + parseInt(currentValue), 0)
   return footprint;
 };
 
