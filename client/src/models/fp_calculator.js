@@ -20,7 +20,7 @@ FpCalculator.prototype.bindEvents = function () {
     this.request.getById(id)
       .then((footprint) => {
         // console.log(footprint);
-        PubSub.publish("FpCalculator:latest-footprint", footprint)
+        PubSub.publish("FpCalculator:footprint-retrieved", footprint)
       })
   })
 };

@@ -4,6 +4,7 @@ const FootprintResultView = require("./views/footprint_result_view");
 const ResultListView = require("./views/result_list_view");
 const CoolDataView = require("./views/cool_data_view");
 const ShowSelectView = require("./views/show_select_view");
+const ShowSelectedView = require("./views/show_selected_view");
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -33,5 +34,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const coolDataContainer = document.querySelector("#cool-data-view");
   const coolDataView = new CoolDataView(coolDataContainer);
   coolDataView.bindEvents();
+
+  const dateContainer = document.querySelector("#date-container");
+  const showSelectedView = new ShowSelectedView(dateContainer);
+  showSelectedView.bindEvents();
 
 })
