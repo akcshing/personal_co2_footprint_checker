@@ -11,6 +11,8 @@ FootprintResultView.prototype.bindEvents = function () {
 };
 
 FootprintResultView.prototype.renderResult = function (latestFootprint) {
+  this.container.innerHTML= '';
+
   const result = latestFootprint.footprint
 
   const resultDisplay = document.createElement("h3");

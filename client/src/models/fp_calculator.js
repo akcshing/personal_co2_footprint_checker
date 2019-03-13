@@ -13,12 +13,28 @@ FpCalculator.prototype.bindEvents = function () {
     // console.log(evt.detail);
     this.postFootprintData(evt.detail);
   })
+
+  PubSub.subscribe("ShowSelectView:id-selected", (evt)=>{
+    const id = evt.detail;
+    // console.log(id);
+    this.request.getById(id)
+      .then((footprint) => {
+        // console.log(footprint);
+        PubSub.publish("FpCalculator:footprint-retrieved", footprint)
+      })
+  })
 };
 
+FpCalculator.prototype.getData = function () {
+  this.request.get()
+    .then((allFootprints) => {
+      // console.log(allFootprints);
+      PubSub.publish("FpCalculator:index-loaded", allFootprints);
+    })
+};
 
-FpCalculator.prototype.addScores = function (scores) {
-  const footprint = parseInt(scores.diet) + parseInt(scores.commute) + parseInt(scores.recycling)
-  return footprint;
+FpCalculator.prototype.addScores = function (footprintData) {
+  return footprintData.scores.reduce((accumulator, currentValue) => accumulator + parseInt(Object.values(currentValue)), 0)
 };
 
 FpCalculator.prototype.postFootprintData = function (footprintData) {
