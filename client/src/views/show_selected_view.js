@@ -17,6 +17,8 @@ ShowSelectedView.prototype.bindEvents = function () {
     showingUpdateForm.classList.remove("hidden");
 
     const footprint = evt.detail;
+    PubSub.publish("FpCalculator:latest-footprint", footprint);
+
     console.log("selected view:", footprint);
     const dateHeader = document.querySelector("#date-header");
     dateHeader.innerHTML = "";

@@ -28,6 +28,21 @@ ShowSelectView.prototype.bindEvents = function () {
 
 ShowSelectView.prototype.populate = function (allFootprints) {
   this.container.innerHTML = "";
+
+  const sortedFootprints = allFootprints.sort(function (a, b) {
+    let dateA = a.date;
+    let dateB = b.date;
+    if (dateA < dateB) {
+      return -1;
+    }
+    if (dateA > dateB) {
+      return 1;
+    }
+    return 0;
+  });
+
+  console.log("Sorted footprints:", sortedFootprints);
+
   allFootprints.forEach( (footprint) => {
     const option = document.createElement("option");
     option.value = footprint._id

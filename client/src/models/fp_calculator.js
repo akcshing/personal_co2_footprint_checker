@@ -23,7 +23,6 @@ FpCalculator.prototype.bindEvents = function () {
 
   })
 
-
   PubSub.subscribe("ShowSelectView:id-selected", (evt)=>{
     const id = evt.detail;
     // console.log(id);
@@ -33,12 +32,20 @@ FpCalculator.prototype.bindEvents = function () {
         PubSub.publish("FpCalculator:footprint-retrieved", footprint)
       })
   })
+
+  PubSub.subscribe('coolDataView:timelineGraphBtn-clicked', (evt) => {
+    this.request.get()
+      .then((allFootprints) => {
+        PubSub.publish('FpCalculator:index-for-graph', allFootprints);
+      })
+  })
+
 };
 
 FpCalculator.prototype.getData = function () {
   this.request.get()
     .then((allFootprints) => {
-      console.log(allFootprints);
+      // console.log(allFootprints);
       PubSub.publish("FpCalculator:index-loaded", allFootprints);
     })
 };
@@ -62,7 +69,13 @@ FpCalculator.prototype.updateFootprintData = function (id, updatedFootprintData)
   // const id = {_id: ObjectID(id)}
   console.log("HERE IS ID", id);
   this.request.put(id, updatedFootprintData)
-
+    .then((allFootprints) => {
+      PubSub.publish("FpCalculator:all-data-loaded", allFootprints);
+    })
+  this.request.getById(id)
+    .then((footprint) => {
+      PubSub.publish("FpCalculator:latest-footprint", footprint);
+    })
 };
 
 
