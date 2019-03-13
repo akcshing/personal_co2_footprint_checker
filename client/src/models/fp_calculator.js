@@ -62,7 +62,13 @@ FpCalculator.prototype.updateFootprintData = function (id, updatedFootprintData)
   // const id = {_id: ObjectID(id)}
   console.log("HERE IS ID", id);
   this.request.put(id, updatedFootprintData)
-
+    // .then((allFootprints) => {
+    //   // console.log(allFootprints);
+    //   const latestFootprint = allFootprints[allFootprints.length - 1];
+    //   // console.log(latestFootprint);
+    //   PubSub.publish("FpCalculator:all-data-loaded", allFootprints);
+    //   PubSub.publish("FpCalculator:latest-footprint", latestFootprint);
+    // })
 };
 
 
