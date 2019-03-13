@@ -62,7 +62,9 @@ FpCalculator.prototype.updateFootprintData = function (id, updatedFootprintData)
   // const id = {_id: ObjectID(id)}
   console.log("HERE IS ID", id);
   this.request.put(id, updatedFootprintData)
-
+    .then((allFootprints) => {
+      PubSub.publish("FpCalculator:all-data-loaded", allFootprints);
+    })
   this.request.getById(id)
     .then((footprint) => {
       PubSub.publish("FpCalculator:latest-footprint", footprint);
