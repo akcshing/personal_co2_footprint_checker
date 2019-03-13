@@ -6,10 +6,11 @@
   <link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet">
   <link rel="stylesheet" href="./css/main.css">
   <link rel="shortcut icon" href="">
-  <title>CO2 Footprint Checker</title>
+  <link rel="icon" href="./css/logo.png">
+  <title>HUELLA : CO2 Footprint Checker</title>
 </head>
 <body>
-  <h1>CO2 Footprint Checker</h1>
+  <h1>HUELLA : CO2 Footprint Checker</h1>
 
   <div id="intro">
     Calculate Your Carbon Footprint Below:
@@ -20,318 +21,320 @@
     <select id="all-footprints" name="all-footprints"></select>
     <h2 id="date-header"></h2>
   </div>
-  <div class="grid">
+  <div class="grid-container">
+    <div class="grid-item">
+      <div id="form-view">
+        <h2 id="behaviours-header">Select Your Behaviours</h2>
+        <form id="form" action="index.html" method="post">
 
-    <div id="form-view">
-      <h2 id="behaviours-header">Select Your Behaviours</h2>
-      <form id="form" action="index.html" method="post">
+          <ul>
 
-        <ul>
+            <li>
+              <input required type="date" id="dateSelect">
+            </li>
 
-          <li>
-            <input required type="date" id="dateSelect">
-          </li>
+            <li>
+              <label for="diet">Diet: </label>
+              <select required id="diet" name="">
+                <option selected disabled value="">Select One</option>
+                <option value=6>I eat meat in every meal</option>
+                <option value=5>I eat meat in some meals</option>
+                <option value=4>I eat meat very rarely</option>
+                <option value=3>My diet has no beef</option>
+                <option value=2>I am a vegetarian</option>
+                <option value=1>I am a vegan</option>
+              </select>
 
-          <li>
-            <label for="diet">Diet: </label>
-            <select required id="diet" name="">
-              <option selected disabled value="">Select One</option>
-              <option value=6>I eat meat in every meal</option>
-              <option value=5>I eat meat in some meals</option>
-              <option value=4>I eat meat very rarely</option>
-              <option value=3>My diet has no beef</option>
-              <option value=2>I am a vegetarian</option>
-              <option value=1>I am a vegan</option>
-            </select>
+            </li>
+            <li>
+              <label for="commute">Commute: </label>
+              <select required id="commute" name="">
+                <option selected disabled value="">Select One</option>
+                <option value=6>I only drive everywhere</option>
+                <option value=5>I mostly drive</option>
+                <option value=4>I occassionally drive</option>
+                <option value=3>I occassionally walk/cycle, mostly public transport</option>
+                <option value=2>I occassionally public transport, mostly walk/cycle</option>
+                <option value=1>I only walk/cycle</option>
+              </select>
+            </li>
 
-          </li>
-          <li>
-            <label for="commute">Commute: </label>
-            <select required id="commute" name="">
-              <option selected disabled value="">Select One</option>
-              <option value=6>I only drive everywhere</option>
-              <option value=5>I mostly drive</option>
-              <option value=4>I occassionally drive</option>
-              <option value=3>I occassionally walk/cycle, mostly public transport</option>
-              <option value=2>I occassionally public transport, mostly walk/cycle</option>
-              <option value=1>I only walk/cycle</option>
-            </select>
-          </li>
+            <li>
+              <label for="recycling">Recycling: </label>
+              <select required id="recycling" name="">
+                <option selected disabled value="">Select One</option>
+                <option value=6>I never recycle</option>
+                <option value=5>I only recycle in restaurants given the option</option>
+                <option value=4>I recycle one of glass, paper, plastic, cardboard</option>
+                <option value=3>I recycle two of glass, paper, plastic, cardboard</option>
+                <option value=2>I recycle three of glass, paper, plastic, cardboard</option>
+                <option value=1>I always recycle all possible materials</option>
+              </select>
+            </li>
 
-          <li>
-            <label for="recycling">Recycling: </label>
-            <select required id="recycling" name="">
-              <option selected disabled value="">Select One</option>
-              <option value=6>I never recycle</option>
-              <option value=5>I only recycle in restaurants given the option</option>
-              <option value=4>I recycle one of glass, paper, plastic, cardboard</option>
-              <option value=3>I recycle two of glass, paper, plastic, cardboard</option>
-              <option value=2>I recycle three of glass, paper, plastic, cardboard</option>
-              <option value=1>I always recycle all possible materials</option>
-            </select>
-          </li>
+            <li>
+              <label for="heating">Heating: </label>
+              <select required id="heating" name="">
+                <option selected disabled value="">Select One</option>
+                <option value=6>My home has a heating source and air conditioning</option>
+                <option value=5>My home's main heating source is wood burning</option>
+                <option value=4>My home uses electric heating</option>
+                <option value=3>My home uses a boiler</option>
+                <option value=2>My home is heated using mains gas</option>
+                <option value=1>My home is heated using solar/geothermal/masonry power</option>
+              </select>
+            </li>
 
-          <li>
-            <label for="heating">Heating: </label>
-            <select required id="heating" name="">
-              <option selected disabled value="">Select One</option>
-              <option value=6>My home has a heating source and air conditioning</option>
-              <option value=5>My home's main heating source is wood burning</option>
-              <option value=4>My home uses electric heating</option>
-              <option value=3>My home uses a boiler</option>
-              <option value=2>My home is heated using mains gas</option>
-              <option value=1>My home is heated using solar/geothermal/masonry power</option>
-            </select>
-          </li>
+            <li>
+              <label for="flying">Flying: </label>
+              <select required id="flying" name="">
+                <option selected disabled value="">Select One</option>
+                <option value=6>I fly 40+ hours/year</option>
+                <option value=5>I fly 21-39 hours/year</option>
+                <option value=4>I fly 11-20 hours/year</option>
+                <option value=3>I fly 6-10 hours/year </option>
+                <option value=2>I fly 1-5 hours/year</option>
+                <option value=1>I never fly</option>
+              </select>
+            </li>
 
-          <li>
-            <label for="flying">Flying: </label>
-            <select required id="flying" name="">
-              <option selected disabled value="">Select One</option>
-              <option value=6>I fly 40+ hours/year</option>
-              <option value=5>I fly 21-39 hours/year</option>
-              <option value=4>I fly 11-20 hours/year</option>
-              <option value=3>I fly 6-10 hours/year </option>
-              <option value=2>I fly 1-5 hours/year</option>
-              <option value=1>I never fly</option>
-            </select>
-          </li>
+            <li>
+              <label for="clothes">Clothes/Footwear: </label>
+              <select required id="clothes" name="">
+                <option selected disabled value="">Select One</option>
+                <option value=6>I buy a new wardrobe every year</option>
+                <option value=5>I buy new clothes every month</option>
+                <option value=4>I buy new clothes about twice a year</option>
+                <option value=3>I buy new clothes very rarely, mostly buy used clothes</option>
+                <option value=2>I only buy used clothes</option>
+                <option value=1>I never buy new clothes</option>
+              </select>
+            </li>
 
-          <li>
-            <label for="clothes">Clothes/Footwear: </label>
-            <select required id="clothes" name="">
-              <option selected disabled value="">Select One</option>
-              <option value=6>I buy a new wardrobe every year</option>
-              <option value=5>I buy new clothes every month</option>
-              <option value=4>I buy new clothes about twice a year</option>
-              <option value=3>I buy new clothes very rarely, mostly buy used clothes</option>
-              <option value=2>I only buy used clothes</option>
-              <option value=1>I never buy new clothes</option>
-            </select>
-          </li>
+            <li>
+              <label for="electronics">Electronics/Appliances: </label>
+              <select required id="electronics" name="">
+                <option selected disabled value="">Select One</option>
+                <option value=6>I regularly buy the latest electronics/appliances</option>
+                <option value=5>I buy new electronics/appliances about twice a year</option>
+                <option value=4>I buy new electronics/appliances about once a year</option>
+                <option value=3>I only buy new electronics/appliances if my existing ones break</option>
+                <option value=2>I only buy used electronics/appliances</option>
+                <option value=1>I never buy new electronics/appliances</option>
+              </select>
+            </li>
 
-          <li>
-            <label for="electronics">Electronics/Appliances: </label>
-            <select required id="electronics" name="">
-              <option selected disabled value="">Select One</option>
-              <option value=6>I regularly buy the latest electronics/appliances</option>
-              <option value=5>I buy new electronics/appliances about twice a year</option>
-              <option value=4>I buy new electronics/appliances about once a year</option>
-              <option value=3>I only buy new electronics/appliances if my existing ones break</option>
-              <option value=2>I only buy used electronics/appliances</option>
-              <option value=1>I never buy new electronics/appliances</option>
-            </select>
-          </li>
+            <li>
+              <label for="pets">Pets: </label>
+              <select required id="pets" name="">
+                <option selected disabled value="">Select One</option>
+                <option value=6>I have several pets and spend £40+/month on their food</option>
+                <option value=5>I have two pets and spend about £40/month on their food</option>
+                <option value=4>I have two pets and spend about £30/month on their food</option>
+                <option value=3>I have one pet and spend about £20/month on their food</option>
+                <option value=2>I have one pet and spend about £10/month on their food</option>
+                <option value=1>I don't have a pet</option>
+              </select>
+            </li>
 
-          <li>
-            <label for="pets">Pets: </label>
-            <select required id="pets" name="">
-              <option selected disabled value="">Select One</option>
-              <option value=6>I have several pets and spend £40+/month on their food</option>
-              <option value=5>I have two pets and spend about £40/month on their food</option>
-              <option value=4>I have two pets and spend about £30/month on their food</option>
-              <option value=3>I have one pet and spend about £20/month on their food</option>
-              <option value=2>I have one pet and spend about £10/month on their food</option>
-              <option value=1>I don't have a pet</option>
-            </select>
-          </li>
+            <li>
+              <label for="beauty">Beauty/Grooming Products: </label>
+              <select required id="beauty" name="">
+                <option selected disabled value="">Select One</option>
+                <option value=6>I spend £50+/month on beauty/grooming products</option>
+                <option value=5>I spend £40/month on beauty/grooming products</option>
+                <option value=4>I spend £30/month on beauty/grooming products</option>
+                <option value=3>I spend £20/month on beauty/grooming products</option>
+                <option value=2>I spend £10/month on beauty/grooming products</option>
+                <option value=1>I don't spend money on beauty/grooming products</option>
+              </select>
+            </li>
 
-          <li>
-            <label for="beauty">Beauty/Grooming Products: </label>
-            <select required id="beauty" name="">
-              <option selected disabled value="">Select One</option>
-              <option value=6>I spend £50+/month on beauty/grooming products</option>
-              <option value=5>I spend £40/month on beauty/grooming products</option>
-              <option value=4>I spend £30/month on beauty/grooming products</option>
-              <option value=3>I spend £20/month on beauty/grooming products</option>
-              <option value=2>I spend £10/month on beauty/grooming products</option>
-              <option value=1>I don't spend money on beauty/grooming products</option>
-            </select>
-          </li>
+            <li>
+              <label for="paper">Paper-based Products: </label>
+              <select required id="paper" name="">
+                <option selected disabled value="">Select One</option>
+                <option value=6>I buy newspapers, magazines and reguarly print on paper</option>
+                <option value=5>I occassionally buy newspapers, magazines and regularly print on paper</option>
+                <option value=4>I occassionally buy newspapers, magazines and occassionally print on paper</option>
+                <option value=3>I mostly consume digital products, regularly print on paper</option>
+                <option value=2>I mostly consume digital products, occassionally print on paper</option>
+                <option value=1>I only consume digital products, never print on paper</option>
+              </select>
+            </li>
 
-          <li>
-            <label for="paper">Paper-based Products: </label>
-            <select required id="paper" name="">
-              <option selected disabled value="">Select One</option>
-              <option value=6>I buy newspapers, magazines and reguarly print on paper</option>
-              <option value=5>I occassionally buy newspapers, magazines and regularly print on paper</option>
-              <option value=4>I occassionally buy newspapers, magazines and occassionally print on paper</option>
-              <option value=3>I mostly consume digital products, regularly print on paper</option>
-              <option value=2>I mostly consume digital products, occassionally print on paper</option>
-              <option value=1>I only consume digital products, never print on paper</option>
-            </select>
-          </li>
+          </ul>
+          <input type="submit" id="save" value="Calculate">
+        </form>
+      </div>
 
+      <div id="updateFormView" class="hidden">
+        <h2>Selected Footprint's Options</h2>
+        <form id="update-form" method="put">
 
+          <ul>
 
-        </ul>
-        <input type="submit" id="save" value="Calculate">
-      </form>
+            <li>
+              <input required type="date" id="newDateSelect">
+            </li>
+
+            <li>
+              <label for="diet">Diet: </label>
+              <select required id="newDiet" name="">
+                <option selected disabled value="">Select One</option>
+                <option value=6>I eat meat in every meal</option>
+                <option value=5>I eat meat in some meals</option>
+                <option value=4>I eat meat very rarely</option>
+                <option value=3>My diet has no beef</option>
+                <option value=2>I am a vegetarian</option>
+                <option value=1>I am a vegan</option>
+              </select>
+            </li>
+
+            <li>
+              <label for="commute">Commute: </label>
+              <select required id="newCommute" name="">
+                <option selected disabled value="">Select One</option>
+                <option value=6>I only drive everywhere</option>
+                <option value=5>I mostly drive</option>
+                <option value=4>I occassionally drive</option>
+                <option value=3>I occassionally walk/cycle, mostly public transport</option>
+                <option value=2>I occassionally public transport, mostly walk/cycle</option>
+                <option value=1>I only walk/cycle</option>
+              </select>
+            </li>
+
+            <li>
+              <label for="recycling">Recycling: </label>
+              <select required id="newRecycling" name="">
+                <option selected disabled value="">Select One</option>
+                <option value=6>I never recycle</option>
+                <option value=5>I only recycle in restaurants given the option</option>
+                <option value=4>I recycle one of glass, paper, plastic, cardboard</option>
+                <option value=3>I recycle two of glass, paper, plastic, cardboard</option>
+                <option value=2>I recycle three of glass, paper, plastic, cardboard</option>
+                <option value=1>I always recycle all possible materials</option>
+              </select>
+            </li>
+
+            <li>
+              <label for="heating">Heating: </label>
+              <select required id="newHeating" name="">
+                <option selected disabled value="">Select One</option>
+                <option value=6>My home has a heating source and air conditioning</option>
+                <option value=5>My home's main heating source is wood burning</option>
+                <option value=4>My home uses electric heating</option>
+                <option value=3>My home uses a boiler</option>
+                <option value=2>My home is heated using mains gas</option>
+                <option value=1>My home is heated using solar/geothermal/masonry power</option>
+              </select>
+            </li>
+
+            <li>
+              <label for="flying">Flying: </label>
+              <select required id="newFlying" name="">
+                <option selected disabled value="">Select One</option>
+                <option value=6>I fly 40+ hours/year</option>
+                <option value=5>I fly 21-39 hours/year</option>
+                <option value=4>I fly 11-20 hours/year</option>
+                <option value=3>I fly 6-10 hours/year </option>
+                <option value=2>I fly 1-5 hours/year</option>
+                <option value=1>I never fly</option>
+              </select>
+            </li>
+
+            <li>
+              <label for="clothes">Clothes/Footwear: </label>
+              <select required id="newClothes" name="">
+                <option selected disabled value="">Select One</option>
+                <option value=6>I buy a new wardrobe every year</option>
+                <option value=5>I buy new clothes every month</option>
+                <option value=4>I buy new clothes about twice a year</option>
+                <option value=3>I buy new clothes very rarely, mostly buy used clothes</option>
+                <option value=2>I only buy used clothes</option>
+                <option value=1>I never buy new clothes</option>
+              </select>
+            </li>
+
+            <li>
+              <label for="electronics">Electronics/Appliances: </label>
+              <select required id="newElectronics" name="">
+                <option selected disabled value="">Select One</option>
+                <option value=6>I regularly buy the latest electronics/appliances</option>
+                <option value=5>I buy new electronics/appliances about twice a year</option>
+                <option value=4>I buy new electronics/appliances about once a year</option>
+                <option value=3>I only buy new electronics/appliances if my existing ones break</option>
+                <option value=2>I only buy used electronics/appliances</option>
+                <option value=1>I never buy new electronics/appliances</option>
+              </select>
+            </li>
+
+            <li>
+              <label for="pets">Pets: </label>
+              <select required id="newPets" name="">
+                <option selected disabled value="">Select One</option>
+                <option value=6>I have several pets and spend £40+/month on their food</option>
+                <option value=5>I have two pets and spend about £40/month on their food</option>
+                <option value=4>I have two pets and spend about £30/month on their food</option>
+                <option value=3>I have one pet and spend about £20/month on their food</option>
+                <option value=2>I have one pet and spend about £10/month on their food</option>
+                <option value=1>I don't have a pet</option>
+              </select>
+            </li>
+
+            <li>
+              <label for="beauty">Beauty/Grooming Products: </label>
+              <select required id="newBeauty" name="">
+                <option selected disabled value="">Select One</option>
+                <option value=6>I spend £50+/month on beauty/grooming products</option>
+                <option value=5>I spend £40/month on beauty/grooming products</option>
+                <option value=4>I spend £30/month on beauty/grooming products</option>
+                <option value=3>I spend £20/month on beauty/grooming products</option>
+                <option value=2>I spend £10/month on beauty/grooming products</option>
+                <option value=1>I don't spend money on beauty/grooming products</option>
+              </select>
+            </li>
+
+            <li>
+              <label for="paper">Paper-based Products: </label>
+              <select required id="newPaper" name="">
+                <option selected disabled value="">Select One</option>
+                <option value=6>I buy newspapers, magazines and reguarly print on paper</option>
+                <option value=5>I occassionally buy newspapers, magazines and regularly print on paper</option>
+                <option value=4>I occassionally buy newspapers, magazines and occassionally print on paper</option>
+                <option value=3>I mostly consume digital products, regularly print on paper</option>
+                <option value=2>I mostly consume digital products, occassionally print on paper</option>
+                <option value=1>I only consume digital products, never print on paper</option>
+              </select>
+            </li>
+
+            <input type="hidden" id="fpId" value="">
+          </ul>
+          <input type="submit" id="update" value="Update">
+        </form>
+      </div>
     </div>
 
-    <div id="updateFormView" class="hidden">
-      <h2>Selected Footprint's Options</h2>
-      <form id="update-form" method="put">
-
-        <ul>
-
-          <li>
-            <input required type="date" id="newDateSelect">
-          </li>
-
-          <li>
-            <label for="diet">Diet: </label>
-            <select required id="newDiet" name="">
-              <option selected disabled value="">Select One</option>
-              <option value=6>I eat meat in every meal</option>
-              <option value=5>I eat meat in some meals</option>
-              <option value=4>I eat meat very rarely</option>
-              <option value=3>My diet has no beef</option>
-              <option value=2>I am a vegetarian</option>
-              <option value=1>I am a vegan</option>
-            </select>
-          </li>
-
-          <li>
-            <label for="commute">Commute: </label>
-            <select required id="newCommute" name="">
-              <option selected disabled value="">Select One</option>
-              <option value=6>I only drive everywhere</option>
-              <option value=5>I mostly drive</option>
-              <option value=4>I occassionally drive</option>
-              <option value=3>I occassionally walk/cycle, mostly public transport</option>
-              <option value=2>I occassionally public transport, mostly walk/cycle</option>
-              <option value=1>I only walk/cycle</option>
-            </select>
-          </li>
-
-          <li>
-            <label for="recycling">Recycling: </label>
-            <select required id="newRecycling" name="">
-              <option selected disabled value="">Select One</option>
-              <option value=6>I never recycle</option>
-              <option value=5>I only recycle in restaurants given the option</option>
-              <option value=4>I recycle one of glass, paper, plastic, cardboard</option>
-              <option value=3>I recycle two of glass, paper, plastic, cardboard</option>
-              <option value=2>I recycle three of glass, paper, plastic, cardboard</option>
-              <option value=1>I always recycle all possible materials</option>
-            </select>
-          </li>
-
-          <li>
-            <label for="heating">Heating: </label>
-            <select required id="newHeating" name="">
-              <option selected disabled value="">Select One</option>
-              <option value=6>My home has a heating source and air conditioning</option>
-              <option value=5>My home's main heating source is wood burning</option>
-              <option value=4>My home uses electric heating</option>
-              <option value=3>My home uses a boiler</option>
-              <option value=2>My home is heated using mains gas</option>
-              <option value=1>My home is heated using solar/geothermal/masonry power</option>
-            </select>
-          </li>
-
-          <li>
-            <label for="flying">Flying: </label>
-            <select required id="newFlying" name="">
-              <option selected disabled value="">Select One</option>
-              <option value=6>I fly 40+ hours/year</option>
-              <option value=5>I fly 21-39 hours/year</option>
-              <option value=4>I fly 11-20 hours/year</option>
-              <option value=3>I fly 6-10 hours/year </option>
-              <option value=2>I fly 1-5 hours/year</option>
-              <option value=1>I never fly</option>
-            </select>
-          </li>
-
-          <li>
-            <label for="clothes">Clothes/Footwear: </label>
-            <select required id="newClothes" name="">
-              <option selected disabled value="">Select One</option>
-              <option value=6>I buy a new wardrobe every year</option>
-              <option value=5>I buy new clothes every month</option>
-              <option value=4>I buy new clothes about twice a year</option>
-              <option value=3>I buy new clothes very rarely, mostly buy used clothes</option>
-              <option value=2>I only buy used clothes</option>
-              <option value=1>I never buy new clothes</option>
-            </select>
-          </li>
-
-          <li>
-            <label for="electronics">Electronics/Appliances: </label>
-            <select required id="newElectronics" name="">
-              <option selected disabled value="">Select One</option>
-              <option value=6>I regularly buy the latest electronics/appliances</option>
-              <option value=5>I buy new electronics/appliances about twice a year</option>
-              <option value=4>I buy new electronics/appliances about once a year</option>
-              <option value=3>I only buy new electronics/appliances if my existing ones break</option>
-              <option value=2>I only buy used electronics/appliances</option>
-              <option value=1>I never buy new electronics/appliances</option>
-            </select>
-          </li>
-
-          <li>
-            <label for="pets">Pets: </label>
-            <select required id="newPets" name="">
-              <option selected disabled value="">Select One</option>
-              <option value=6>I have several pets and spend £40+/month on their food</option>
-              <option value=5>I have two pets and spend about £40/month on their food</option>
-              <option value=4>I have two pets and spend about £30/month on their food</option>
-              <option value=3>I have one pet and spend about £20/month on their food</option>
-              <option value=2>I have one pet and spend about £10/month on their food</option>
-              <option value=1>I don't have a pet</option>
-            </select>
-          </li>
-
-          <li>
-            <label for="beauty">Beauty/Grooming Products: </label>
-            <select required id="newBeauty" name="">
-              <option selected disabled value="">Select One</option>
-              <option value=6>I spend £50+/month on beauty/grooming products</option>
-              <option value=5>I spend £40/month on beauty/grooming products</option>
-              <option value=4>I spend £30/month on beauty/grooming products</option>
-              <option value=3>I spend £20/month on beauty/grooming products</option>
-              <option value=2>I spend £10/month on beauty/grooming products</option>
-              <option value=1>I don't spend money on beauty/grooming products</option>
-            </select>
-          </li>
-
-          <li>
-            <label for="paper">Paper-based Products: </label>
-            <select required id="newPaper" name="">
-              <option selected disabled value="">Select One</option>
-              <option value=6>I buy newspapers, magazines and reguarly print on paper</option>
-              <option value=5>I occassionally buy newspapers, magazines and regularly print on paper</option>
-              <option value=4>I occassionally buy newspapers, magazines and occassionally print on paper</option>
-              <option value=3>I mostly consume digital products, regularly print on paper</option>
-              <option value=2>I mostly consume digital products, occassionally print on paper</option>
-              <option value=1>I only consume digital products, never print on paper</option>
-            </select>
-          </li>
-
-          <input type="hidden" id="fpId" value="">
-        </ul>
-        <input type="submit" id="update" value="Update">
-      </form>
+    <div class="grid-item">
+      <h2>Individual Results</h2>
+      <div id="result-list-view">
+      </div>
+    </div>
+    <div class="grid-item">
+      <h2>Your Footprint Result</h2>
+      <div id="footprint-result-view">
+      </div>
     </div>
 
-    <h2>Individual Results</h2>
-    <div id="result-list-view">
-
-    </div>
-
-    <h2>Your Footprint Result</h2>
-    <div id="footprint-result-view">
-
-    </div>
-
-    <h2>COOL DATA GRAPH!</h2>
+    <div class="grid-item">
+      <h2>COOL DATA GRAPH!</h2>
       <!-- <button type="button" name="button" id="individualGraphBtn">Individual footprint</button> -->
       <button type="button" name="button" id="timelineGraphBtn">Timeline</button>
       <!-- <button type="button" name="button" class="hidden" id="countriesGraphBtn">Countries comparisson</button> -->
-    <div id="cool-data-view">
+      <div id="cool-data-view">
+      </div>
     </div>
-
+    <div id="image"></div>
     <div id="explanation">
       <p>A carbon footprint is defined as the total amount of greenhouse gases produced to directly and indirectly support a person's activities. It is important to remember that any estimation of a carbon footprint will have some level of inprecision- it is impossible to completely accurately estimate any one person's impact on the environment. </p>
       <p>This application quantifies your carbon footprint using values that you submit for different aspects of your lifestyle. It also compares your carbon footprint with that of average citizens from different countries- these estimations are made based on the most recent (2014) figures for country per capita footprints, published by the World Bank. For more information about how to reduce your carbon footprint, see the following links:

@@ -16,7 +16,7 @@ FootprintResultView.prototype.renderResult = function (latestFootprint) {
   const result = latestFootprint.footprint
 
   const resultDisplay = document.createElement("h3");
-  resultDisplay.textContent = `Your carbon footprint is: ${result}`;
+  resultDisplay.textContent = `Your carbon footprint is: ${result}/60. For comparison, an average citizen in Sweden has a footprint of 43.`;
   this.container.appendChild(resultDisplay);
 };
 
