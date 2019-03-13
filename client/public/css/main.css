@@ -6,9 +6,12 @@ body {
   background-image: url("glencoe_picture_project_background.jpg");
   background-size: cover;
   background-position: center;
-/*
 }
 
+.hidden {
+  display: none;
+}
+/*
 .grid {
 
   height: 90vh;

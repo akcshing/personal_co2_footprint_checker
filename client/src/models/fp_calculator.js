@@ -14,6 +14,16 @@ FpCalculator.prototype.bindEvents = function () {
     this.postFootprintData(evt.detail);
   })
 
+  PubSub.subscribe("ShowSelectedView:update-form-submitted", (evt) => {
+    // console.log(evt.detail);
+    evt.detail.updatedData.footprint = this.addScores(evt.detail.updatedData);
+    const id = evt.detail.id
+    console.log("I AM AN ID:", id);
+    this.updateFootprintData(id, evt.detail.updatedData);
+
+  })
+
+
   PubSub.subscribe("ShowSelectView:id-selected", (evt)=>{
     const id = evt.detail;
     // console.log(id);
@@ -28,7 +38,7 @@ FpCalculator.prototype.bindEvents = function () {
 FpCalculator.prototype.getData = function () {
   this.request.get()
     .then((allFootprints) => {
-      // console.log(allFootprints);
+      console.log(allFootprints);
       PubSub.publish("FpCalculator:index-loaded", allFootprints);
     })
 };
@@ -48,6 +58,12 @@ FpCalculator.prototype.postFootprintData = function (footprintData) {
     })
 };
 
+FpCalculator.prototype.updateFootprintData = function (id, updatedFootprintData) {
+  // const id = {_id: ObjectID(id)}
+  console.log("HERE IS ID", id);
+  this.request.put(id, updatedFootprintData)
+
+};
 
 
 module.exports = FpCalculator;
