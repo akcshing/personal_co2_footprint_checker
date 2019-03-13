@@ -23,38 +23,38 @@ ShowSelectedView.prototype.bindEvents = function () {
     dateHeader.textContent = `Your selected entry: ${footprint.date}.`
 
     const dateSelect = document.querySelector("#newDateSelect");
-    // console.dir(dateSelect);
     dateSelect.value = footprint.date;
 
     const dietSelect = document.querySelector("#newDiet");
-    dietSelect[parseInt(Object.values(footprint.scores[0]))].selected = true;
+    dietSelect.value = parseInt(Object.values(footprint.scores[0]))
 
     const commuteSelect = document.querySelector("#newCommute");
-    commuteSelect[parseInt(Object.values(footprint.scores[1]))].selected = true;
+    commuteSelect.value = parseInt(Object.values(footprint.scores[1]))
 
     const recyclingSelect = document.querySelector("#newRecycling");
-    recyclingSelect[parseInt(Object.values(footprint.scores[2]))].selected = true;
+    recyclingSelect.value = parseInt(Object.values(footprint.scores[2]))
 
     const heatingSelect = document.querySelector("#newHeating");
-    heatingSelect[parseInt(Object.values(footprint.scores[3]))].selected = true;
+    heatingSelect.value = parseInt(Object.values(footprint.scores[3]))
 
     const flyingSelect = document.querySelector("#newFlying");
-    flyingSelect[parseInt(Object.values(footprint.scores[4]))].selected = true;
+    flyingSelect.value = parseInt(Object.values(footprint.scores[4]))
 
     const clothesFootwearSelect = document.querySelector("#newClothes");
-    clothesFootwearSelect[parseInt(Object.values(footprint.scores[5]))].selected = true;
+    clothesFootwearSelect.value = parseInt(Object.values(footprint.scores[5]))
 
     const electronicsAppliancesSelect = document.querySelector("#newElectronics");
-    electronicsAppliancesSelect[parseInt(Object.values(footprint.scores[6]))].selected = true;
+    electronicsAppliancesSelect.value = parseInt(Object.values(footprint.scores[6]))
 
     const petsSelect = document.querySelector("#newPets");
-    petsSelect[parseInt(Object.values(footprint.scores[7]))].selected = true;
+    petsSelect.value = parseInt(Object.values(footprint.scores[7]))
 
     const beautyGroomingProductsSelect = document.querySelector("#newBeauty");
-    beautyGroomingProductsSelect[parseInt(Object.values(footprint.scores[8]))].selected = true;
+    beautyGroomingProductsSelect.value = parseInt(Object.values(footprint.scores[8]))
 
     const paperBasedProductsSelect = document.querySelector("#newPaper");
-    paperBasedProductsSelect[parseInt(Object.values(footprint.scores[9]))].selected = true;
+    paperBasedProductsSelect.value = parseInt(Object.values(footprint.scores[9]))
+    // paperBasedProductsSelect[parseInt(Object.values(footprint.scores[9]))].selected = true;
 
     const fpIdInput = document.querySelector("#fpId")
     fpIdInput.value = footprint._id
