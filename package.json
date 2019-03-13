@@ -4,10 +4,10 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
+    "test": "mocha client/src/models/specs",
     "start": "node server/server.js",
     "build": "webpack -w",
-    "server:dev": "nodemon server/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server:dev": "nodemon server/server.js"
   },
   "author": "",
   "license": "ISC",
@@ -15,6 +15,8 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "highcharts": "^7.0.3",
+    "mocha": "^6.0.2",
+    "mongo": "^0.1.0",
     "mongodb": "^3.1.13",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.2.3"

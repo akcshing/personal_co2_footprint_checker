@@ -1,0 +1,62 @@
+body {
+  padding: 30px;
+  font-family: 'Staatliches', cursive;
+  color: black;
+  font-weight: bolder;
+  background-image: url("glencoe_picture_project_background.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.hidden {
+  display: none;
+}
+/*
+.grid {
+
+  height: 90vh;
+    margin: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+
+}
+
+h1 {
+font-size: 80px;
+text-align: center;
+
+}
+
+h2 {
+  font-size: 22px;
+  text-align: center;
+  text-decoration: underline;
+
+}
+
+#diet {
+
+
+}
+
+#intro {
+  text-align: center;
+  font-size: 40px;
+  padding: 15px;
+}
+
+#form-view {
+  text-align: center;
+
+}
+
+ul {
+  list-style: none;
+
+}
+
+h3 {
+  text-align: center;
+
+} */
