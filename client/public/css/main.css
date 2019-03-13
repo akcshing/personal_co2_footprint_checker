@@ -1,6 +1,7 @@
 body {
   padding: 30px;
   font-family: 'Staatliches', cursive;
+  font-size: 25px;
   color: black;
   font-weight: bolder;
   background-image: url("glencoe_picture_project_background.jpg");
@@ -11,52 +12,85 @@ body {
 .hidden {
   display: none;
 }
-/*
-.grid {
 
-  height: 90vh;
-    margin: 2rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  padding: 5px;
+}
+.grid-item {
+  /* border: 1px solid rgba(0, 0, 0, 0.8); */
+  padding: 5px;
+  font-size: 25px;
+  text-align: center;
 
 }
 
 h1 {
 font-size: 80px;
 text-align: center;
-
 }
 
 h2 {
-  font-size: 22px;
+  font-size: 40px;
   text-align: center;
   text-decoration: underline;
-
 }
 
-#diet {
-
-
-}
 
 #intro {
   text-align: center;
-  font-size: 40px;
+  font-size: 60px;
   padding: 15px;
 }
 
 #form-view {
-  text-align: center;
-
+  grid-area: 1 / 1;
+  text-align: left;
 }
-
 ul {
   list-style: none;
-
 }
-
 h3 {
   text-align: center;
+}
 
-} */
+#updateFormView {
+  grid-column: 1;
+  grid-row: 1;
+  text-align: left;
+}
+
+#result-list-view {
+  grid-column: 2;
+  grid-row: 1;
+  text-align: center;
+}
+
+#footprint-result-view {
+  grid-column: 2;
+  grid-row: 2;
+  text-align: center;
+  font-size: 50px;
+}
+
+#cool-data-view {
+  grid-column: 1;
+  grid-row: 2;
+  text-align: center;
+}
+
+#image {
+   content:url("logo.png");
+   width:300px;
+   height: 300px;
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+}​
+
+#date-container {
+  text-align: center;
+
+}
