@@ -1,6 +1,5 @@
-BRIEF
+Project brief - Personal CO2 Footprint Checker
 
-Personal CO2 Footprint Checker
 You have been approached by a lifestyle consultancy company dealing with environmental sustainability. Your task is to build a personal CO2 footprint checker app that calculates a user's CO2 footprint based on their lifestyle.
 
 MVP
